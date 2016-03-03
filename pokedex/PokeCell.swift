@@ -15,12 +15,17 @@ class PokeCell: UICollectionViewCell {
     
     var pokemon: Pokemon!
     
-    func configureCell(pokemon: Pokemon) {
+    func configureCell(pokemonToConfigure: Pokemon) {
         
-        self.pokemon = pokemon
-        nameLbl.text = self.pokemon.name.capitalizedString
-        thumImg.image = UIImage(named: "\(self.pokemon.pokedexId)")
+        pokemon = pokemonToConfigure
+        nameLbl.text = pokemon.name.capitalizedString
+        thumImg.image = UIImage(named: "\(pokemon.pokedexId)")
         
+    }
+    
+    override func awakeFromNib() {
+        self.layer.cornerRadius = 5.0
+        self.clipsToBounds = true
     }
     
 }

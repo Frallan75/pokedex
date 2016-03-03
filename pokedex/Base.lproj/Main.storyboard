@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="55" id="pDw-lJ-Qyt"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" alpha="0.25" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aMu-nk-Td2">
+                            <collectionView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aMu-nk-Td2">
                                 <rect key="frame" x="20" y="119" width="560" height="461"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="P7L-xh-Kr3">
@@ -37,17 +37,18 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sdN-ft-IFH" customClass="PokeCell" customModule="pokedex" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PokemonCell" id="sdN-ft-IFH" customClass="PokeCell" customModule="pokedex" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="219" translatesAutoresizingMaskIntoConstraints="NO" id="qEI-8N-y8G">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="219" translatesAutoresizingMaskIntoConstraints="NO" id="qEI-8N-y8G">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="90"/>
+                                                    <color key="backgroundColor" white="1" alpha="0.098760775862068967" colorSpace="calibratedWhite"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lk0-ps-9AX">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lk0-ps-9AX">
                                                     <rect key="frame" x="0.0" y="90" width="110" height="20"/>
                                                     <color key="backgroundColor" red="1" green="0.2196078431372549" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -60,7 +61,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.6887661637931034" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="0.4947737068965517" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="lk0-ps-9AX" secondAttribute="bottom" id="G3p-fW-lSM"/>
                                             <constraint firstItem="qEI-8N-y8G" firstAttribute="leading" secondItem="sdN-ft-IFH" secondAttribute="leading" id="I0X-AR-cDJ"/>
@@ -104,6 +105,9 @@
                             <constraint firstItem="dss-vH-MGF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sOc-wS-cfX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="aMu-nk-Td2" id="EGl-4V-5nh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

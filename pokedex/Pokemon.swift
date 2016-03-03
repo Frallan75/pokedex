@@ -26,7 +26,7 @@ class Pokemon {
         }
     }
     
-    init(name: String, index: Int) {
+    init(name: String, pokedexId: Int) {
         
         self._name = name
         self._pokedexId = pokedexId
