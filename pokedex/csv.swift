@@ -11,8 +11,8 @@ public class CSV {
     public var columns = Dictionary<String, [String]>()
     var delimiter = NSCharacterSet(charactersInString: ",")
     
-    public init(content: String?, delimiter: NSCharacterSet, encoding: UInt) throws{
-        if let csvStringToParse = content{
+    public init(content: String?, delimiter: NSCharacterSet, encoding: UInt) throws {
+        if let csvStringToParse = content {
             self.delimiter = delimiter
 
             let newline = NSCharacterSet.newlineCharacterSet()

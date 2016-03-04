@@ -16,6 +16,8 @@
 		BA78195A1C88E1A500A6B274 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7819591C88E1A500A6B274 /* Pokemon.swift */; };
 		BA78195D1C88EC7400A6B274 /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78195C1C88EC7400A6B274 /* PokeCell.swift */; };
 		BA78195F1C88F5B900A6B274 /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78195E1C88F5B900A6B274 /* csv.swift */; };
+		BA7819641C8A0D1100A6B274 /* PokemonSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA7819631C8A0D1100A6B274 /* PokemonSolid.ttf */; };
+		BA7819661C8A134600A6B274 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA7819651C8A134600A6B274 /* music.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		BA7819591C88E1A500A6B274 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		BA78195C1C88EC7400A6B274 /* PokeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
 		BA78195E1C88F5B900A6B274 /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
+		BA7819631C8A0D1100A6B274 /* PokemonSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PokemonSolid.ttf; sourceTree = "<group>"; };
+		BA7819651C8A134600A6B274 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 		BA7819621C88F5D900A6B274 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BA7819651C8A134600A6B274 /* music.mp3 */,
+				BA7819631C8A0D1100A6B274 /* PokemonSolid.ttf */,
 				BA7819561C88E0A000A6B274 /* pokemon.csv */,
 			);
 			name = Resources;
@@ -176,7 +182,9 @@
 			files = (
 				BA78194F1C88DEFF00A6B274 /* LaunchScreen.storyboard in Resources */,
 				BA78194C1C88DEFF00A6B274 /* Assets.xcassets in Resources */,
+				BA7819661C8A134600A6B274 /* music.mp3 in Resources */,
 				BA7819571C88E0A000A6B274 /* pokemon.csv in Resources */,
+				BA7819641C8A0D1100A6B274 /* PokemonSolid.ttf in Resources */,
 				BA78194A1C88DEFF00A6B274 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
