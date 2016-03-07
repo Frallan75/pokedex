@@ -55,7 +55,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="72172B0C-6FC9-44BE-8C42-B8AC7830579D" translatesAutoresizingMaskIntoConstraints="NO" id="qEI-8N-y8G">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="068BA706-6532-4F66-A972-FB310B334BDA" translatesAutoresizingMaskIntoConstraints="NO" id="qEI-8N-y8G">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="90"/>
                                                     <color key="backgroundColor" white="1" alpha="0.098760775862068967" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -161,16 +161,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfk-oh-xHa">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="55"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charzized" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hz-zq-Dff">
-                                        <rect key="frame" x="150" y="20" width="300" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="l7Y-vX-aOD"/>
-                                            <constraint firstAttribute="height" constant="27" id="vu8-dW-ijO"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0t-8S-ftP">
                                         <rect key="frame" x="8" y="17" width="72" height="38"/>
                                         <constraints>
@@ -181,7 +171,20 @@
                                         <state key="normal" title="Back">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="bOy-tD-CQa" eventType="touchUpInside" id="8S4-IG-PuT"/>
+                                        </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charzized" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hz-zq-Dff">
+                                        <rect key="frame" x="150" y="20" width="300" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="l7Y-vX-aOD"/>
+                                            <constraint firstAttribute="height" constant="27" id="vu8-dW-ijO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.21960784310000001" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -368,7 +371,18 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="detailLbl" destination="9hz-zq-Dff" id="zeC-Dz-frY"/>
+                        <outlet property="baseAttackLbl" destination="zTY-9R-7jT" id="qcp-Jp-afS"/>
+                        <outlet property="currentEvoImg" destination="J8D-Jx-QHg" id="5oA-U1-0v7"/>
+                        <outlet property="defence" destination="BkE-ge-fOr" id="7G5-s8-fg7"/>
+                        <outlet property="descLbl" destination="Owz-0S-EuR" id="aZn-EF-irW"/>
+                        <outlet property="evoTxtLbl" destination="7rQ-fI-IUj" id="c0h-kW-QLU"/>
+                        <outlet property="heightLbl" destination="uwq-3q-9ab" id="fZM-7R-DYV"/>
+                        <outlet property="mainImg" destination="2gh-M6-NX4" id="5KS-R1-xsJ"/>
+                        <outlet property="nameLbl" destination="9hz-zq-Dff" id="7zF-d5-xI2"/>
+                        <outlet property="nextEvoImg" destination="KV9-5f-Ey3" id="Ivk-Zt-5cm"/>
+                        <outlet property="pokedexId" destination="ma2-U9-oQi" id="HSd-4p-gTl"/>
+                        <outlet property="typeLb" destination="zon-Tx-Evv" id="3g3-Wl-zxz"/>
+                        <outlet property="weightLbl" destination="BgP-1g-7Ej" id="nHt-Jm-jyd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbp-re-P69" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -377,10 +391,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1" width="120" height="120"/>
-        <image name="10" width="120" height="120"/>
-        <image name="103" width="136" height="120"/>
-        <image name="72172B0C-6FC9-44BE-8C42-B8AC7830579D" width="120" height="120">
+        <image name="068BA706-6532-4F66-A972-FB310B334BDA" width="120" height="120">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1391,6 +1402,9 @@ AL8AxADbAN0A3+qB6obqkeqa6q3qseq86sXqyurS6tXq2urp6u3q9Or86wnrDusQ6xLrF+sf6yLrJ+sv
 6zLrROtH60wAAAAAAAACAQAAAAAAAABBAAAAAAAAAAAAAAAAAADrTg
 </mutableData>
         </image>
+        <image name="1" width="120" height="120"/>
+        <image name="10" width="120" height="120"/>
+        <image name="103" width="136" height="120"/>
         <image name="Sound" width="256" height="256"/>
         <image name="bg" width="1920" height="1200"/>
     </resources>
