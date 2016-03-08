@@ -30,6 +30,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         initAudio()
         
         searchBar.returnKeyType = UIReturnKeyType.Done
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
     }
     
     func initAudio() {

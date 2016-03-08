@@ -11,6 +11,7 @@ import Alamofire
 
 class Pokemon {
     
+    //DESCRIPTION
     private var _name: String!
     private var _pokedexId: Int!
     private var _desc: String!
@@ -276,7 +277,6 @@ class Pokemon {
                                     print(self._desc)
                                 }
                             }
-                            
                             completed()
                         }
                     }
@@ -308,13 +308,13 @@ class Pokemon {
                     }
                     
                     if let moveUrl = moves[0]["resource_uri"] as? String {
-                        print(moveUrl)
+     
                         let url = NSURL(string: "\(URL_BASE)\(moveUrl)")!
                         
                         Alamofire.request(.GET, url).responseJSON { response in
-                            print("in request")
+            
                             if let dict = response.result.value! as? Dictionary<String, AnyObject> where dict.count >  0 {
-                                print("in response")
+                           
                                 if let moveDesc = dict["description"] as? String {
                                     self._moveDesc = moveDesc
                                 }

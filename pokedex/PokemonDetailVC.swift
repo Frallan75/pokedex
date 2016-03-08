@@ -11,7 +11,9 @@ import UIKit
 class PokemonDetailVC: UIViewController {
 
     @IBOutlet weak var mySegmentedControll: UISegmentedControl!
+    @IBOutlet weak var nextEvoView: UIView!
     
+    //TITLE LBL OUTLETS
     @IBOutlet weak var r1c1TitleLbl: UILabel!
     @IBOutlet weak var r2c1TitleLbl: UILabel!
     @IBOutlet weak var r3c1TitleLbl: UILabel!
@@ -33,8 +35,6 @@ class PokemonDetailVC: UIViewController {
     @IBOutlet weak var nextEvoImg: UIImageView!
     @IBOutlet weak var evoTxtLbl: UILabel!
     
-    //MOVES SEGMENT OUTLETS
-    
     
     
     var pokemon: Pokemon!
@@ -49,6 +49,12 @@ class PokemonDetailVC: UIViewController {
         pokemon.downloadPokemonDetails { DownloadComplete in
             self.updateUI()
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        nextEvoView.layer.cornerRadius = 5.0
+        nextEvoView.clipsToBounds = true
     }
     
     func updateUI() {

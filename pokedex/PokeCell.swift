@@ -20,7 +20,7 @@ class PokeCell: UICollectionViewCell {
         pokemon = pokemonToConfigure
         nameLbl.text = pokemon.name.capitalizedString
         thumImg.image = UIImage(named: "\(pokemon.pokedexId)")
-        
+    
     }
     
     override func awakeFromNib() {
