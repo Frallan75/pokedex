@@ -55,7 +55,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="068BA706-6532-4F66-A972-FB310B334BDA" translatesAutoresizingMaskIntoConstraints="NO" id="qEI-8N-y8G">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="93139002-B3E2-43B1-9EEE-6C44A883D5AF" translatesAutoresizingMaskIntoConstraints="NO" id="qEI-8N-y8G">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="90"/>
                                                     <color key="backgroundColor" white="1" alpha="0.098760775862068967" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -208,6 +208,9 @@
                                             <segment title="Moves"/>
                                         </segments>
                                         <color key="tintColor" red="1" green="0.21960784310000001" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="segmentChanged:" destination="bOy-tD-CQa" eventType="valueChanged" id="yr0-fC-oLd"/>
+                                        </connections>
                                     </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="iOv-NI-1RI">
                                         <rect key="frame" x="0.0" y="49" width="560" height="120"/>
@@ -378,9 +381,16 @@
                         <outlet property="evoTxtLbl" destination="7rQ-fI-IUj" id="c0h-kW-QLU"/>
                         <outlet property="heightLbl" destination="uwq-3q-9ab" id="fZM-7R-DYV"/>
                         <outlet property="mainImg" destination="2gh-M6-NX4" id="5KS-R1-xsJ"/>
+                        <outlet property="mySegmentedControll" destination="Ota-MG-bgD" id="fbA-re-YuH"/>
                         <outlet property="nameLbl" destination="9hz-zq-Dff" id="7zF-d5-xI2"/>
                         <outlet property="nextEvoImg" destination="KV9-5f-Ey3" id="Ivk-Zt-5cm"/>
                         <outlet property="pokedexId" destination="ma2-U9-oQi" id="HSd-4p-gTl"/>
+                        <outlet property="r1c1TitleLbl" destination="KPO-5k-bQR" id="vmR-Nm-fZQ"/>
+                        <outlet property="r1c2TitleLbl" destination="DTw-BC-Yfd" id="4si-qN-aVK"/>
+                        <outlet property="r2c1TitleLbl" destination="Ddy-Et-vdm" id="Xlc-OJ-Gth"/>
+                        <outlet property="r2c2TitleLbl" destination="mcJ-Km-tD4" id="hS8-21-kkb"/>
+                        <outlet property="r3c1TitleLbl" destination="dUs-kJ-dI5" id="q8u-ma-h1n"/>
+                        <outlet property="r3c2TitleLbl" destination="Dzz-2a-rwf" id="c7D-uO-OTZ"/>
                         <outlet property="typeLb" destination="zon-Tx-Evv" id="3g3-Wl-zxz"/>
                         <outlet property="weightLbl" destination="BgP-1g-7Ej" id="nHt-Jm-jyd"/>
                     </connections>
@@ -391,7 +401,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="068BA706-6532-4F66-A972-FB310B334BDA" width="120" height="120">
+        <image name="1" width="120" height="120"/>
+        <image name="10" width="120" height="120"/>
+        <image name="103" width="136" height="120"/>
+        <image name="93139002-B3E2-43B1-9EEE-6C44A883D5AF" width="120" height="120">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1402,9 +1415,6 @@ AL8AxADbAN0A3+qB6obqkeqa6q3qseq86sXqyurS6tXq2urp6u3q9Or86wnrDusQ6xLrF+sf6yLrJ+sv
 6zLrROtH60wAAAAAAAACAQAAAAAAAABBAAAAAAAAAAAAAAAAAADrTg
 </mutableData>
         </image>
-        <image name="1" width="120" height="120"/>
-        <image name="10" width="120" height="120"/>
-        <image name="103" width="136" height="120"/>
         <image name="Sound" width="256" height="256"/>
         <image name="bg" width="1920" height="1200"/>
     </resources>

@@ -24,6 +24,15 @@ class Pokemon {
     private var _nextEvoLvl: String!
     private var _pokemonUrl: String!
     
+    //MOVES
+    private var _moveDesc: String!
+    private var _moveName: String!
+    private var _learn_type: String!
+    private var _accuracy: String!
+    private var _power: String!
+    private var _pp: String!
+    
+    
     var name: String {
         get {
             if _name == nil {
@@ -119,6 +128,49 @@ class Pokemon {
         return self._nextEvoLvl
     }
     
+    //MOVES VAR
+    
+    var moveDesc: String {
+        if _moveDesc == nil {
+            _moveDesc = "No move description available"
+        }
+        return _moveDesc
+    }
+    
+    var learn_type: String {
+        if _learn_type == nil {
+            _learn_type = "N/A"
+        }
+        return _learn_type
+    }
+    
+    var moveName: String {
+        if _moveName == nil {
+            _moveName = "N/A"
+        }
+        return _moveName
+    }
+    
+    var accuracy: String {
+        if _accuracy == nil {
+            _accuracy = "N/A"
+        }
+        return _accuracy
+    }
+    
+    var power: String {
+        if _power == nil {
+            _power = "N/A"
+        }
+        return _power
+    }
+    
+    var pp: String {
+        if _pp == nil {
+            _pp = "N/A"
+        }
+        return _pp
+    }
 
     init(name: String, pokedexId: Int) {
         
@@ -128,7 +180,7 @@ class Pokemon {
         
     }
     
-    func downloadPokemonDetails(completed: () -> ()) {
+    func downloadPokemonDetails(completed: DownloadComplete) {
         
         let url = NSURL(string: _pokemonUrl)!
         
@@ -162,7 +214,7 @@ class Pokemon {
                         self._type = type.capitalizedString
                         print(self._type)
                     }
-                    print(types.count)
+        
                     if types.count > 1 {
                         
                         for var x = 1; x < types.count; x++ {
@@ -193,18 +245,12 @@ class Pokemon {
                                 self._nextEvoID = num
                                 
                             }
-                            
                             self._evoTxt = to.capitalizedString
-                           
                             
                             if let lvl = evolutions[0]["level"] as? Int {
                                 self._nextEvoLvl = "\(lvl)"
                                 
                             }
-                            print(self._evoTxt)
-                            print(self._nextEvoID)
-                            print(self._nextEvoLvl)
-                            
                         }
                     }
                 } else {
@@ -240,5 +286,58 @@ class Pokemon {
             }
         }
     }
+    
+    func downloadMoves(completed: DownloadComplete) {
+        
+        let url = NSURL(string: _pokemonUrl)!
+        
+        Alamofire.request(.GET, url).responseJSON { response in
+            
+        let result = response.result
+            
+            if let dict = result.value! as? Dictionary<String, AnyObject> {
+                
+                if let moves = dict["moves"] as? [Dictionary<String, AnyObject>] where moves.count > 0 {
+                    
+                    if let learn_type = moves[0]["learn_type"] as? String {
+                        self._learn_type = learn_type.capitalizedString
+                    }
+                    
+                    if let moveName = moves[0]["name"] as? String {
+                        self._moveName = moveName.capitalizedString
+                    }
+                    
+                    if let moveUrl = moves[0]["resource_uri"] as? String {
+                        print(moveUrl)
+                        let url = NSURL(string: "\(URL_BASE)\(moveUrl)")!
+                        
+                        Alamofire.request(.GET, url).responseJSON { response in
+                            print("in request")
+                            if let dict = response.result.value! as? Dictionary<String, AnyObject> where dict.count >  0 {
+                                print("in response")
+                                if let moveDesc = dict["description"] as? String {
+                                    self._moveDesc = moveDesc
+                                }
+                                
+                                if let accuracy = dict["accuracy"] as? Int {
+                                    self._accuracy = "\(accuracy)"
+                                }
+                                
+                                if let power = dict["power"] as? Int {
+                                    self._power = "\(power)"
+                                }
+                                
+                                if let pp = dict["pp"] as? Int {
+                                    self._pp = "\(pp)"
+                                }
+                                completed()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+
 

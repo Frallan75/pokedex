@@ -127,7 +127,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             musicPlayer.play()
             sender.alpha = 1.0
         }
-    
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
