@@ -55,7 +55,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8195ADC5-DFEC-44F7-B70A-2629214F99F2" translatesAutoresizingMaskIntoConstraints="NO" id="qEI-8N-y8G">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CA40DC67-AD88-489E-8F50-669F9F44CB81" translatesAutoresizingMaskIntoConstraints="NO" id="qEI-8N-y8G">
                                                     <rect key="frame" x="0.0" y="0.0" width="110" height="90"/>
                                                     <color key="backgroundColor" white="1" alpha="0.36896551724137933" colorSpace="calibratedWhite"/>
                                                 </imageView>
@@ -404,7 +404,8 @@
         <image name="1" width="120" height="120"/>
         <image name="10" width="120" height="120"/>
         <image name="103" width="136" height="120"/>
-        <image name="8195ADC5-DFEC-44F7-B70A-2629214F99F2" width="120" height="120">
+        <image name="BG3-1" width="500" height="750"/>
+        <image name="CA40DC67-AD88-489E-8F50-669F9F44CB81" width="120" height="120">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -1415,7 +1416,6 @@ AL8AxADbAN0A3+qB6obqkeqa6q3qseq86sXqyurS6tXq2urp6u3q9Or86wnrDusQ6xLrF+sf6yLrJ+sv
 6zLrROtH60wAAAAAAAACAQAAAAAAAABBAAAAAAAAAAAAAAAAAADrTg
 </mutableData>
         </image>
-        <image name="BG3-1" width="500" height="750"/>
         <image name="Music" width="50" height="50"/>
     </resources>
 </document>
