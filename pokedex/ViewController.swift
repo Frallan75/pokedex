@@ -30,6 +30,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         initAudio()
         
         searchBar.returnKeyType = UIReturnKeyType.Done
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
     }
     
     func initAudio() {
@@ -101,13 +104,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-
+        
+        var poke: Pokemon!
+        
+        if searchMode {
+            poke = filteredPokemon[indexPath.row]
+        } else {
+            poke = pokemon[indexPath.row]
+        }
+        print(poke.name)
+        performSegueWithIdentifier("PokemonDetailVC", sender: poke)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         return CGSize(width: 105, height: 105)
     }
-    
 
     @IBAction func musicBtnPressed(sender: UIButton) {
         
@@ -119,7 +130,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             musicPlayer.play()
             sender.alpha = 1.0
         }
-    
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -141,7 +151,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "PokemonDetailVC" {
+            if let vc = segue.destinationViewController as? PokemonDetailVC {
+                if let poke = sender as? Pokemon {
+                    vc.pokemon = poke
+                }
+            }
+        }
+    }
 }
-
