@@ -51,7 +51,7 @@ class PokemonDetailVC: UIViewController {
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         nextEvoView.layer.cornerRadius = 5.0
         nextEvoView.clipsToBounds = true
@@ -69,12 +69,12 @@ class PokemonDetailVC: UIViewController {
         
         if pokemon.nextEvoID == "N/A" {
         
-            nextEvoImg.hidden = true
+            nextEvoImg.isHidden = true
             evoTxtLbl.text = "No evolutions available"
         
         } else {
         
-        nextEvoImg.hidden = false
+        nextEvoImg.isHidden = false
         nextEvoImg.image = UIImage(named: "\(pokemon.nextEvoID)")
         let str = "Next evolution \(pokemon.evoTxt)"
         
@@ -99,12 +99,12 @@ class PokemonDetailVC: UIViewController {
         baseAttackLbl.text = pokemon.pp
     }
 
-    @IBAction func backBtnPressed(sender: AnyObject) {
+    @IBAction func backBtnPressed(_ sender: AnyObject) {
     
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func segmentChanged(sender: UISegmentedControl) {
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         
         if sender.selectedSegmentIndex == 1 {
             
